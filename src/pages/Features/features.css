@@ -1,0 +1,9 @@
+.features-lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+@media (max-width: 500px) {
+  .features-lists {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}

@@ -1,0 +1,107 @@
+.lesson-video {
+  padding-top: 50px;
+}
+.video-react .video-react-big-play-button {
+  position: absolute;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  -webkit-transform: translate(-50%, -50%) !important;
+  -moz-transform: translate(-50%, -50%) !important;
+  -ms-transform: translate(-50%, -50%) !important;
+  -o-transform: translate(-50%, -50%) !important;
+  background-color: var(--main-color) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  -ms-border-radius: 10px !important;
+  -o-border-radius: 10px !important;
+}
+.lesson-video .container {
+  display: flex;
+}
+.lesson-video .sidebar-video {
+  width: 120%;
+  margin-left: 30px;
+}
+.lesson-list {
+  width: 100%;
+}
+@media (max-width: 1136px) {
+  .lesson-video .container {
+    flex-direction: column;
+  }
+  .lesson-video .sidebar-video {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .lesson-list {
+    width: 100%;
+  }
+}
+
+.lesson-video-details {
+  background-color: var(--white-color);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  padding: 30px;
+  margin-top: 20px;
+}
+.lesson-video-details h1 {
+  margin-bottom: 20px;
+  color: var(--main-color);
+  line-height: 1.8;
+}
+.lesson-video-details ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.video-react {
+  direction: ltr;
+  border-radius: 20px !important;
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  -ms-border-radius: 20px !important;
+  -o-border-radius: 20px !important;
+}
+.video-react-poster {
+  border-radius: 20px !important;
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  -ms-border-radius: 20px !important;
+  -o-border-radius: 20px !important;
+}
+.video-react-controls-enabled
+  .video-react-has-started
+  .video-react-paused
+  .video-react-fluid
+  .video-react-user-inactive
+  .video-react-workinghover
+  .video-react {
+  border-radius: 20px !important;
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  -ms-border-radius: 20px !important;
+  -o-border-radius: 20px !important;
+}
+.video-react-video {
+  border-radius: 20px !important;
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  -ms-border-radius: 20px !important;
+  -o-border-radius: 20px !important;
+}
+.video-react .video-react-control-bar {
+  background-color: #2b333f !important;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}

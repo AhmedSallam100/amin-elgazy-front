@@ -1,0 +1,270 @@
+.add-exam {
+  margin-top: 50px;
+}
+.add-exam .container {
+  display: flex;
+  gap: 10px;
+}
+.add-exam .container .sidebar {
+  width: 25%;
+}
+.add-exam .container .add-content {
+  width: 75%;
+}
+.add-exam .container .sidebar,
+.add-exam .container .add-content {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--white-color);
+  box-shadow: 0px 0px 7px #a3b9d23b;
+}
+.add-exam .container .sidebar .ul-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.add-exam .container .sidebar .ul-links .ul-link {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  width: 100%;
+  border-radius: 12px;
+  background-color: var(--bg-color);
+  transition: 0.3s;
+}
+.add-exam .container .sidebar .ul-links .ul-link i {
+  font-size: 22px;
+}
+.add-exam .container .sidebar .ul-links .ul-link:hover {
+  background-color: var(--main-color);
+}
+.add-exam .container .sidebar .ul-links .ul-link:hover a,
+.add-exam .container .sidebar .ul-links .ul-link:hover i {
+  color: var(--white-color) !important;
+}
+.add-exam .container .sidebar .ul-links .ul-link i {
+  transition: 0.3s;
+  margin-right: 15px;
+}
+.add-exam .container .sidebar .ul-links .ul-link:not(.active) i {
+  color: var(--main-color);
+}
+.add-exam .container .sidebar .ul-links .ul-link a {
+  display: block;
+  width: 100%;
+  transition: 0.3s;
+  color: var(--black-color);
+  padding: 20px 0;
+}
+.add-exam .container .sidebar .ul-links .ul-link a:hover {
+  margin-right: 7px;
+}
+.add-exam .container .sidebar .ul-links .ul-link.active {
+  border: none;
+  color: var(--white-color);
+  background-color: var(--main-color);
+}
+.add-exam .container .sidebar .ul-links .ul-link.active a {
+  color: var(--white-color);
+}
+.add-exam .container .add-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.add-exam .container .add-content form .input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.add-exam .container .add-content form .input-group input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  caret-color: var(--main-color);
+  background-color: var(--grey-color);
+}
+.add-exam .container .add-content form .input-group select,
+.table-head form select {
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  background-color: var(--grey-color);
+}
+.add-exam .container .add-content form .input-group input[type="file"] {
+  height: 310px;
+  opacity: 0;
+  z-index: 99999;
+  cursor: pointer;
+}
+.add-exam .container .add-content form .input-group .upload-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  transition: 0.3s;
+  background-color: var(--grey-color);
+}
+.add-exam .container .add-content form .input-group .upload-content i {
+  font-size: 50px;
+  color: var(--main-color);
+}
+.add-exam .container .add-content form button {
+  display: block;
+  padding: 12px 0;
+  border-radius: 10px;
+  font-size: 18px;
+  text-align: center;
+  transition: 0.5s;
+  cursor: pointer;
+  border: none;
+  color: var(--white-color);
+  background-color: var(--main-color);
+}
+/********** Start Show All Exams ***********/
+.show-all-exams {
+  margin-top: 50px;
+}
+.show-all-exams .container {
+  padding: 20px;
+  border-radius: 14px;
+  background-color: var(--white-color);
+  box-shadow: 0px 0px 7px #a3b9d23b;
+}
+.table-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.table-head form {
+  padding: 8px;
+  background-color: var(--grey-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 300px;
+  justify-content: space-between;
+}
+.table-head form button {
+  border: none;
+  cursor: pointer;
+  padding: 5px 8px;
+  font-size: 18px;
+  border-radius: 10px;
+  color: var(--white-color);
+  background-color: var(--main-color);
+}
+.table-head form select {
+  border-radius: 8px;
+  padding: 10px;
+  background-color: var(--white-color);
+}
+.table_component {
+  overflow: auto;
+  width: 100%;
+}
+.table_component table {
+  border: 1px solid #dededf;
+  height: 100%;
+  width: 100%;
+  border-spacing: 0px;
+  text-align: left;
+  border-radius: 12px;
+  overflow: hidden;
+  border-collapse: separate;
+}
+.table_component h1 {
+  font-size: 24px;
+  color: var(--main-color);
+}
+.table_component th {
+  color: var(--black-color);
+  padding: 15px;
+  text-align: center;
+  background-color: #ebecee;
+}
+.table_component td {
+  border: 1px solid var(--border-color);
+  color: #000000;
+  padding: 15px;
+  text-align: center;
+  border-left: 0;
+  border-bottom: 0;
+}
+.table_component td:nth-child(1) {
+  border-right: 0;
+}
+.table_component td.action-icons div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.table_component td.action-icons div i {
+  color: var(--white-color);
+  padding: 5px 8px;
+  border-radius: 12px;
+  font-size: 20px;
+  background-color: var(--main-color);
+}
+.table_component td.action-icons div button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.table_component td.action-icons div button i {
+  background-color: var(--red-color);
+}
+.all-data-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.all-data-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.all-data-item .item-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.all-data-item .item-text i {
+  font-size: 28px;
+}
+.all-data-item .item-text h2 {
+  font-size: 22px;
+}
+.data-h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  color: var(--main-color);
+  border-bottom: 2px solid var(--grey-color);
+}
+.all-data-item a {
+  padding: 10px;
+  border-radius: 14px;
+  color: var(--white-color);
+  background-color: var(--main-color);
+}
+hr {
+  width: 75%;
+  margin: auto;
+  border: 1px solid var(--grey-color);
+}

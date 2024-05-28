@@ -1,0 +1,33 @@
+.courses-section {
+  padding-top: calc(var(--padding) + 40px);
+}
+.courses-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+.course-info {
+    margin-top: 30px;
+  background-color: white;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  padding: 10px;
+}
+.course-info ul li{
+    margin: 10px 0;
+    display: flex;
+    align-items:  center;
+}
+.course-info ul li svg{
+    margin-left: 10px;
+  
+}
+.course-info ul{
+    margin-bottom: 20px;
+}
+.course-info a{
+    margin-bottom: 20px;
+}

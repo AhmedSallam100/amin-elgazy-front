@@ -1,0 +1,38 @@
+.student-resourses {
+  height: 100vh;
+  display: flex;
+}
+
+.student-resourses .material-photo {
+  padding: 20px;
+  border-radius: 26px;
+  box-shadow: 0px 0px 7px #a3b9d23b;
+  width: fit-content;
+  margin: auto;
+  background-color: var(--white-color);
+}
+.student-resourses .material-photo img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  border-radius: 15px;
+  width: 800px;
+  margin-top: 15px;
+  box-shadow: 0px 0px 15px #a3b9d23b;
+}
+.student-resourses .material-photo h1 {
+  text-align: center;
+}
+.photo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}

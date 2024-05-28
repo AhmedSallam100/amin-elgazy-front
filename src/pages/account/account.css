@@ -1,0 +1,158 @@
+.account {
+  padding-top: calc(var(--padding) + 30px);
+}
+.account .container {
+  display: flex;
+  gap: 20px;
+}
+.account .container > div {
+  background-color: var(--white-color);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 7px #a3b9d21f;
+}
+.account .container .account-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 40%;
+}
+.account .container .account-details .user-img {
+  text-align: center;
+}
+.account .container .account-details .user-img h1 {
+  font-size: 28px;
+}
+.account .container .account-details .details-inputs,
+.account .container .account-details .details-inputs > div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.account .container .todo-app {
+  width: 60%;
+}
+.account .container .account-details .details-inputs input {
+  padding: 15px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  outline: none;
+  caret-color: var(--main-color);
+}
+.account .container .account-details .details-inputs label {
+  color: var(--main-color);
+}
+.account .container .account-details .account-btns {
+  display: flex;
+  gap: 10px;
+}
+.account .container .account-details .account-btns button {
+  width: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 14px;
+  color: var(--white-color);
+  transition: 0.3s;
+  background-color: var(--red-color);
+}
+.account .container .account-details .account-btns button:hover {
+  filter: brightness(95%);
+}
+.todo-app h1 {
+  font-size: 26px;
+}
+.todo-app h2 {
+  margin: 20px 0;
+  text-align: center;
+  color: var(--main-color);
+}
+.todo-app .todo-content form {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+}
+.todo-app .todo-content form input {
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  width: 100%;
+  caret-color: var(--main-color);
+}
+.todo-app .todo-content form button,
+.todo-app .todo-content button {
+  border: none;
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 12px;
+  color: var(--white-color);
+  transition: 0.3s;
+  font-size: 20px;
+  background-color: var(--main-color);
+}
+.todo-app .todo-content .tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+.todo-app .todo-content .tasks .task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 15px 10px;
+  border-radius: 12px;
+  background-color: var(--grey-color);
+  transition: opacity 0.3s linear;
+}
+.todo-app .todo-content .tasks .task > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+@media (max-width: 950px) {
+  .account .container {
+    flex-direction: column;
+  }
+  .account .container .account-details,
+  .account .container .todo-app {
+    width: 100%;
+  }
+}
+.tasks svg {
+  height: 28px;
+  margin-right: 3px;
+  width: 100%;
+  fill: var(--main-color);
+}
+.todo-app .todo-content .tasks .task.done {
+  opacity: 0.5;
+  /* text-decoration: line-through; */
+}
+.todo-app .todo-content .tasks .task span {
+  position: relative;
+}
+.todo-app .todo-content .tasks .task span::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  position: absolute;
+  top: 10px;
+  transition: 0.3s;
+  background-color: var(--black-color);
+}
+.todo-app .todo-content .tasks .task.done span::before {
+  width: 100%;
+}
+.todo-app .todo-content button {
+  padding: 5px 8px;
+  transition: 0.3s;
+  background-color: var(--red-color);
+}
+.todo-app .todo-content button:hover {
+  filter: brightness(95%);
+}
