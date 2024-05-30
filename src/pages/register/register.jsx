@@ -2,7 +2,6 @@ import "./register.css";
 import { Button } from "../home/home";
 export default function Register() {
   return (
-    // https://www.youtube.com/watch?v=K2AoMJWNFT8
     <>
       <RegisterAndLogin className="register-section">
         {" "}
@@ -17,11 +16,7 @@ export default function Register() {
             <form action="">
               <div className="form-group">
                 <label>الاسم</label>
-                <input
-                  type="text"
-                  placeholder="الاسم"
-                  name="full-name"
-                />
+                <input type="text" placeholder="الاسم" name="full-name" />
               </div>
               <div className="form-group">
                 <label>رقم الهاتف</label>
@@ -30,14 +25,6 @@ export default function Register() {
                   dir="rtl"
                   placeholder="رقم الهاتف"
                   name="phone"
-                />
-              </div>
-              <div className="form-group">
-                <label>كلمة المرور</label>
-                <input
-                  type="password"
-                  placeholder="كلمة المرور"
-                  name="password"
                 />
               </div>
               <div className="form-group">
@@ -59,6 +46,14 @@ export default function Register() {
                   <option value="2sec">الثاني الثانوي</option>
                   <option value="3sec">الثالث الثانوي</option>
                 </select>
+              </div>
+              <div className="form-group">
+                <label>كلمة المرور</label>
+                <input
+                  type="password"
+                  placeholder="كلمة المرور"
+                  name="password"
+                />
               </div>
               <button type="submit" className="general-btn create-btn">
                 انشاء{" "}

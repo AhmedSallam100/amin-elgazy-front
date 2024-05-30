@@ -29,9 +29,13 @@ const Sidebar = () => {
           <i className="uil uil-books"></i>
           <Link to={"/dashboard/add-book"}>اضافة مذكرة</Link>
         </NavLink>
-        <NavLink className="ul-link" to={"/dashboard/add-online-exam"}>
+        {/* <NavLink className="ul-link" to={"/dashboard/add-online-exam"}>
           <i className="uil uil-keyboard"></i>
           <Link to={"/dashboard/add-online-exam"}>اضافة امتحان الكتروني</Link>
+        </NavLink> */}
+        <NavLink className="ul-link" to={"/dashboard/add-student"}>
+          <i class="uil uil-user-plus"></i>
+          <Link to={"/dashboard/add-student"}>اضافة طالب</Link>
         </NavLink>
         <NavLink className="ul-link" to={"/dashboard/all-data"}>
           <i className="uil uil-folder-open"></i>

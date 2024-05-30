@@ -43,6 +43,8 @@ import AddBook from "./pages/Admin/AddBook";
 import Books from "./pages/Books/books";
 import ShowAllBooks from "./pages/Admin/ShowAllBooks";
 import ShowAllData from "./pages/Admin/ShowAllData";
+import AddStudent from "./pages/Admin/AddStudent";
+import ShowAllStudents from "./pages/Admin/ShowAllStudents";
 
 axios.defaults.baseURL = `${serverUrl}/api`;
 
@@ -94,6 +96,9 @@ function App() {
         <Route path="/dashboard/add-book" element={<AddBook />}></Route>
         <Route path="/books" element={<Books />}></Route>
         <Route path="/school-books" element={<ShowAllBooks />}></Route>
+
+        <Route path="/dashboard/add-student" element={<AddStudent />}></Route>
+        <Route path="/school-students" element={<ShowAllStudents />}></Route>
 
         <Route path="/dashboard/all-data" element={<ShowAllData />}></Route>
       </Routes>
