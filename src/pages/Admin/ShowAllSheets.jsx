@@ -57,7 +57,7 @@ const ShowAllSheets = () => {
       <div className="container">
         <div className="table_component" role="region" tabIndex="0">
           <div className="table-head">
-            <h1>الامتحانات</h1>
+            <h1>الشيتات</h1>
             <form>
               <span>فلترة</span>
               <select value={selectedGrade} onChange={handleGradeChange}>
