@@ -1,14 +1,23 @@
 import "./lessonAudio.css";
-// Import components
 import Player from "../../StaticComponent/Player";
 import Song from "../../StaticComponent/Song";
 import Library from "../../StaticComponent/Library";
 import styled from "styled-components";
 import Nav from "../../StaticComponent/Nav";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import data from "../../data/data";
+import { useNavigate } from "react-router-dom";
+
 export default function LessonPlayer() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("userInfo")) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   return (
     <>
       <LessonAudio />
@@ -64,9 +73,11 @@ function LessonAudio() {
     <section className="Lesson-Audio-section">
       <div className="container">
         <div className="Lesson-details">
-
           <AppContainer libraryStatus={libraryStatus}>
-          <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
+            <Nav
+              libraryStatus={libraryStatus}
+              setLibraryStatus={setLibraryStatus}
+            />
             <Song currentSong={currentSong} />
             <Player
               isPlaying={isPlaying}

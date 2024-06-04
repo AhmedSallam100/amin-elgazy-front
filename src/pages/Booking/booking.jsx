@@ -1,7 +1,18 @@
 import "./booking.css";
+import { useNavigate } from "react-router-dom";
 import { MainTitle } from "../home/home";
 import { Button } from "../home/home";
+import { useEffect } from "react";
+
 export default function Booking() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("userInfo")) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   return (
     <>
       <BookingDetails />

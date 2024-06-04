@@ -1,5 +1,15 @@
+import { useEffect } from "react";
 import "./exam.css";
+import { useNavigate } from "react-router-dom";
+
 function Exam() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("userInfo")) {
+      navigate("/login");
+    }
+  }, [navigate]);
   return (
     <>
       <ExamSection />

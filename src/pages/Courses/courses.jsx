@@ -1,7 +1,17 @@
 import "./courses.css";
 import { MainTitle } from "../home/home";
 import { Button } from "../home/home";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 export default function Courses() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("userInfo")) {
+      navigate("/login");
+    }
+  }, [navigate]);
   return (
     <>
       <CoursesList />

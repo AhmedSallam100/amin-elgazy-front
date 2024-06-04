@@ -3,13 +3,21 @@ import "./lessonVideo.css";
 import "../../../node_modules/video-react/dist/video-react.css";
 import { Player } from "video-react";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { format } from "date-fns";
 import { ar } from "date-fns/locale";
 import { clientUrl } from "../../config";
 
 function LessonVideo() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("userInfo")) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   return (
     <>
       <LessonVideoDetails />

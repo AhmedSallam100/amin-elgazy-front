@@ -2,8 +2,17 @@ import { StudentLibrary } from "../showExams/showExam";
 import { Button } from "../home/home";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Sheet() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("userInfo")) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   const [sheets, setSheets] = useState([]);
   useEffect(() => {
     const fetchSheets = async () => {

@@ -45,6 +45,7 @@
 .account .container .account-details .account-btns {
   display: flex;
   gap: 10px;
+  flex-direction: row !important;
 }
 .account .container .account-details .account-btns button {
   width: 50%;
@@ -55,6 +56,9 @@
   color: var(--white-color);
   transition: 0.3s;
   background-color: var(--red-color);
+}
+.account .container .account-details .account-btns button:nth-child(1) {
+  background-color: var(--main-color);
 }
 .account .container .account-details .account-btns button:hover {
   filter: brightness(95%);

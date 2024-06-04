@@ -106,7 +106,7 @@ nav .register-btn a:nth-child(2)::before {
   display: flex;
   flex-direction: row;
 }
-.register-btn a {
+.register-btn .btns {
   color: var(--white-color);
   background-color: var(--main-color);
   padding: 12px;
@@ -120,7 +120,7 @@ nav .register-btn a:nth-child(2)::before {
   display: block;
   text-align: center;
 }
-.register-btn  a:nth-child(1){
+.register-btn .btns {
   background: none;
   border: 2px solid var(--main-color);
   color: var(--black-color);
@@ -130,44 +130,61 @@ nav .register-btn a:nth-child(2)::before {
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
 }
-.register-btn  a:nth-child(1):hover{
+.register-btn .btns {
   background-color: var(--main-color);
   color: var(--white-color);
 }
 @media (max-width: 500px) {
-  .register-btn a {
+  .register-btn .btns {
     margin-left: 0;
   }
 }
-.navbar-mobile{
+.register-btn .account-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 7px;
+}
+.register-btn .account-link span {
+  color: var(--black-color);
+}
+.register-btn .account-link i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 9px;
+  border-radius: 12px;
+  color: var(--white-color);
+  background-color: var(--main-color);
+}
+.navbar-mobile {
   display: none;
 }
-.navbar-mobile.active{
-
+.navbar-mobile.active {
   padding: 20px 10px;
   position: absolute;
   top: 100%;
   background-color: var(--grey-color);
   width: 100%;
-  transition:0.5s ;
-  -webkit-transition:0.5s ;
-  -moz-transition:0.5s ;
-  -ms-transition:0.5s ;
-  -o-transition:0.5s ;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
 }
 .navbar-mobile.active ul {
   display: flex;
   flex-direction: column;
-
 }
 .navbar-mobile.active ul li {
   margin: 5px 0;
 }
-.navbar-mobile.active ul li a.active::before{
+.navbar-mobile.active ul li a.active::before {
   display: none;
 }
-@media(max-width:1180px){
-  .navbar-mobile.active{
+@media (max-width: 1180px) {
+  .navbar-mobile.active {
     display: block;
   }
 }

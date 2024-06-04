@@ -12,7 +12,7 @@ const ShowAllData = () => {
       <div className="container">
         <Sidebar />
         <div className="add-content">
-          <h1 className="data-h1">جميع البيانات</h1>
+          {/* <h1 className="data-h1">جميع البيانات</h1> */}
           <div className="all-data-container">
             <div className="all-data-item">
               <div className="item-text">
@@ -60,6 +60,22 @@ const ShowAllData = () => {
                 <h2>المذكرات</h2>
               </div>
               <Link to={"/school-books"}>تصفح</Link>
+            </div>
+            <hr />
+            <div className="all-data-item">
+              <div className="item-text">
+                <i className="uil uil-books"></i>
+                <h2>الطلاب</h2>
+              </div>
+              <Link to={"/school-students"}>تصفح</Link>
+            </div>
+            <hr />
+            <div className="all-data-item">
+              <div className="item-text">
+                <i class="uil uil-envelope-star"></i>
+                <h2>التقييمات</h2>
+              </div>
+              <Link to={"/school-reviews"}>تصفح</Link>
             </div>
           </div>
         </div>

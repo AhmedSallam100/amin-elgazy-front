@@ -1,11 +1,20 @@
 import { useEffect, useState } from "react";
 import MaterialPhoto from "./MaterialPhoto";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { formatDistanceToNowStrict } from "date-fns";
 import { ar } from "date-fns/locale";
 
 function SchoolBoards() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("userInfo")) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   const [boardInfo, setBoardInfo] = useState(null);
   const { id } = useParams();
 

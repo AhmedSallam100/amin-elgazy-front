@@ -1,5 +1,6 @@
 import React, { useState, Component, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import WaveSurfer from "wavesurfer.js";
 import "./audio-list.css";
 import { format } from "date-fns";
@@ -7,6 +8,13 @@ import { ar } from "date-fns/locale";
 import axios from "axios";
 
 function LessonAudio() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("userInfo")) {
+      navigate("/login");
+    }
+  }, [navigate]);
   return (
     <>
       <LessonListSection />

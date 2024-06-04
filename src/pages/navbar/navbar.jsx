@@ -1,21 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 const Navbar = () => {
-  const [navMobile, setNavMobile] = useState(false)
+  const [navMobile, setNavMobile] = useState(false);
+
   return (
     <nav>
-      <NavbarDesktop navMobile={navMobile} setNavMobile = {setNavMobile} />
-      <NavbarMobile navMobile={navMobile}/>
+      <NavbarDesktop navMobile={navMobile} setNavMobile={setNavMobile} />
+      <NavbarMobile navMobile={navMobile} />
     </nav>
   );
 };
-function NavbarDesktop({navMobile, setNavMobile}) {
+function NavbarDesktop({ navMobile, setNavMobile }) {
+  const { userInfo } = useSelector((state) => state.auth);
 
   return (
     <>
       <div className="container">
-        <span className="menu-icon" onClick={()=> setNavMobile(!navMobile)}>
+        <span className="menu-icon" onClick={() => setNavMobile(!navMobile)}>
           <i className="uil uil-bars"></i>
         </span>
 
@@ -31,40 +35,51 @@ function NavbarDesktop({navMobile, setNavMobile}) {
 
         <ul>
           <li>
-            <Link to={"/"} className="active">
-              الرئيسية
-            </Link>
+            <NavLink to={"/"}>الرئيسية</NavLink>
           </li>
           <li>
-            <Link to={"/features"}>الخدمات</Link>
+            <NavLink to={"/features"}>الخدمات</NavLink>
           </li>
           <li>
-            <Link to={"/"}>الاراء</Link>
+            <NavLink to={"/reviews"}>الاراء</NavLink>
           </li>
           <li>
-            <Link to={"/"}>الخطوات</Link>
+            <NavLink to={"/vsdf"}>الخطوات</NavLink>
           </li>
           <li>
-            <Link to={"/"}>قيمنا</Link>
+            <NavLink to={"/ghd"}>قيمنا</NavLink>
           </li>
 
           <li>
-            <Link to={"/"}>من نحن</Link>
+            <NavLink to={"/fdserf"}>من نحن</NavLink>
           </li>
         </ul>
         <div className="register-btn">
-          <Link to={"/courses"}>حجز</Link>
-          <Link to={"/login"}>تسجيل</Link>
+          {userInfo ? (
+            <>
+              <Link to={"/account"} className="account-link">
+                <span>{userInfo.name}</span>
+                <i className="uil uil-user "></i>
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to={"/login"} className="btns">
+                تسجيل
+              </Link>
+              <Link to={"/courses"} className="btns">
+                حجز
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </>
   );
 }
-function NavbarMobile({navMobile}) {
+function NavbarMobile({ navMobile }) {
   return (
-    <div className={`navbar-mobile ${navMobile ?  "active" : ''} ` }>
-
-
+    <div className={`navbar-mobile ${navMobile ? "active" : ""} `}>
       <ul>
         <li>
           <Link to={"/"} className="active">
@@ -88,7 +103,6 @@ function NavbarMobile({navMobile}) {
           <Link to={"/"}>من نحن</Link>
         </li>
       </ul>
-    
     </div>
   );
 }

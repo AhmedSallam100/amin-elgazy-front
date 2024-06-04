@@ -1,7 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "../home/home";
 import "./showExam.css";
+import { useEffect } from "react";
 
 function ShowExam() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("userInfo")) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   return (
     <>
       <StudentLibrary>

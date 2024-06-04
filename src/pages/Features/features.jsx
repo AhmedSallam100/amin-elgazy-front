@@ -1,7 +1,17 @@
 import "./features.css";
 import { Feature } from "../home/home";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function AllFeatures() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("userInfo")) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   return (
     <>
       <section className="features">

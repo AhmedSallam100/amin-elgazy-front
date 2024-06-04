@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../audioList/lessonList.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -6,6 +7,14 @@ import { Button } from "../home/home";
 import { clientUrl } from "../../config";
 
 function VideoList() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("userInfo")) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   const [audios, setAudios] = useState([]);
   useEffect(() => {
     const fetchAudios = async () => {

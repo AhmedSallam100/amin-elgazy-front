@@ -1,0 +1,112 @@
+.contact-form {
+  padding: 20px;
+  border-radius: 26px;
+  box-shadow: 0px 0px 7px #a3b9d23b;
+  background-color: var(--white-color);
+}
+.contact-us {
+  padding-top: calc(var(--padding) + 30px);
+}
+.ContactText h1 {
+  color: var(--main-color);
+  margin-bottom: 10px;
+}
+.contact-us form .form-group {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px auto;
+}
+.contact-us form .form-group input:not(.EmailInput) {
+  width: 49%;
+}
+.contact-us form .form-group input {
+  direction: rtl;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  caret-color: var(--main-color);
+  background-color: var(--grey-color);
+}
+.contact-us form .form-group .EmailInput {
+  width: 100%;
+}
+.contact-us form .form-group .PlaceInput {
+  width: 100%;
+  height: 470px;
+  border: none;
+  outline: none;
+  background-color: var(--);
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  resize: none;
+  margin-bottom: 10px;
+  caret-color: var(--main-color);
+  background-color: var(--grey-color);
+}
+.contact-us form button {
+  width: 100%;
+  background-color: var(--main-color);
+  color: var(--white-color);
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.review-boxes {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+.review-boxes .review-box {
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 25px 20px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0px 0px 7px #a3b9d21f;
+  background-color: var(--white-color);
+}
+.review-boxes .review-box img {
+  width: fit-content;
+}
+.review-boxes .review-box .reviewer-data {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.review-boxes .review-box .review-message {
+  text-align: center;
+  line-height: 1.6;
+  color: var(--toastify-text-color-light);
+}
+.review-boxes .review-box .delete-review {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 5px 8px;
+  border-radius: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--white-color);
+  background-color: var(--red-color);
+}
+.review-boxes .review-box hr {
+  margin: unset;
+}

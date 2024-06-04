@@ -137,7 +137,6 @@ function Testimonial({ image, children }) {
       data-aos-duration="1300"
     >
       <img src={image} alt="طالب" />
-      <Star />
       <p>{children}</p>
     </div>
   );
@@ -175,7 +174,7 @@ function Testimonials() {
             جه من الي حضرتك قولتو بالظبط{" "}
           </Testimonial>
         </div>
-        <Button path="/" className="show-all-btn" text="عرض المزيد" />
+        <Button path="/reviews" className="show-all-btn" text="عرض المزيد" />
       </div>
     </section>
   );

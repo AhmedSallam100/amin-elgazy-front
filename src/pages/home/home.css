@@ -209,13 +209,13 @@
 }
 .testimonials-boxes {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   gap: 25px;
   margin-top: var(--margin-top);
 }
 .testimonial-box {
   background-color: var(--white-color);
-  padding: 70px 20px;
+  padding: 60px 20px 30px;
   border-radius: 20px;
   -webkit-border-radius: 26px;
   -moz-border-radius: 20px;

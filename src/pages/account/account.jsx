@@ -1,7 +1,23 @@
-import { useEffect, useState } from "react";
 import "./account.css";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, setCredentials } from "../../redux/slices/authSlice";
+import {
+  useLogoutMutation,
+  useUpdateUserMutation,
+} from "../../redux/slices/usersApiSlice";
 
 const Account = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("userInfo")) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   return (
     <div className="account">
       <div className="container">
@@ -13,30 +29,97 @@ const Account = () => {
 };
 
 function AccountDetails() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [grad, setGrad] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const { userInfo } = useSelector((state) => state.auth);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [logoutApiCall] = useLogoutMutation();
+
+  const [updateProfile, { isLoading }] = useUpdateUserMutation();
+
+  const logoutHandler = async (e) => {
+    e.preventDefault();
+    try {
+      await logoutApiCall().unwrap();
+      dispatch(logout());
+      navigate("/");
+    } catch (error) {
+      toast.error("حدث خطا..!");
+      console.log(error);
+    }
+  };
+
+  const updateProfileSubmitHandler = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await updateProfile({
+        _id: userInfo._id,
+        name,
+        phone,
+        email,
+      }).unwrap();
+      dispatch(setCredentials({ ...res }));
+      toast.success("تم تحديث الحساب بنجاح..!");
+    } catch (error) {
+      toast.error("حدث خطأ ما..!");
+      console.log(error);
+    }
+  };
+
   return (
     <div className="account-details">
       <div className="user-img">
         <img src="https://aminelgazy.mathjewel.com/avatar-1.png" alt="صورتك" />
-        <h1 className="username">احمد سلام</h1>
+        <h1 className="username">{userInfo?.name}</h1>
       </div>
-      <div className="details-inputs">
+      <form className="details-inputs" onSubmit={updateProfileSubmitHandler}>
         <div className="username-inp">
           <label>الاسم</label>
-          <input type="text" placeholder="احمد سلام" readOnly />
+          <input
+            type="text"
+            placeholder={userInfo?.name}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
         <div className="phone-inp">
           <label>رقم الهاتف</label>
-          <input type="text" placeholder="01024289101" readOnly />
+          <input
+            type="tel"
+            placeholder={userInfo?.phone}
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
         </div>
         <div className="pass-inp">
-          <label>الباسورد</label>
-          <input type="text" placeholder="987456123" readOnly />
+          <label>الايميل</label>
+          <input
+            type="email"
+            placeholder={userInfo?.email}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
-      </div>
-      <div className="account-btns">
-        <button>تسجيل الخروج</button>
-        <button>حذف الحساب</button>
-      </div>
+        <div className="pass-inp">
+          <label>الصف</label>
+          <input type="email" placeholder={userInfo?.grad} readOnly />
+        </div>
+        <div className="account-btns">
+          <button type="submit">تحديث الحساب</button>
+          <button onClick={logoutHandler} type="button">
+            تسجيل الخروج
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

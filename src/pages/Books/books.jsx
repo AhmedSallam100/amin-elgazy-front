@@ -1,6 +1,7 @@
 import { StudentLibrary } from "../showExams/showExam";
 import { Button } from "../home/home";
 import { Link, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./dairy.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -9,6 +10,14 @@ import { ar } from "date-fns/locale";
 import { format } from "date-fns";
 
 function Books() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("userInfo")) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   const [books, setBooks] = useState([]);
   useEffect(() => {
     const fetchBooks = async () => {

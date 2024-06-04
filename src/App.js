@@ -45,6 +45,10 @@ import ShowAllBooks from "./pages/Admin/ShowAllBooks";
 import ShowAllData from "./pages/Admin/ShowAllData";
 import AddStudent from "./pages/Admin/AddStudent";
 import ShowAllStudents from "./pages/Admin/ShowAllStudents";
+import ScrollToTop from "./pages/scrollToTop/ScrollToTop";
+import Reviews from "./pages/reviews/Reviews";
+import AddReview from "./pages/reviews/add-review";
+import SchoolReviews from "./pages/reviews/school-reviews";
 
 axios.defaults.baseURL = `${serverUrl}/api`;
 
@@ -63,10 +67,14 @@ function App() {
         <Route path="/courses" element={<Courses />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/account" element={<Account />}></Route>
         <Route path="/exam" element={<Exam />}></Route>
         <Route path="/myexams" element={<ShowExam />}></Route>
         <Route path="/features" element={<AllFeatures />}></Route>
+        <Route path="/account" element={<Account />}></Route>
+
+        <Route path="/reviews" element={<Reviews />}></Route>
+        <Route path="/add-review" element={<AddReview />}></Route>
+        <Route path="/school-reviews" element={<SchoolReviews />}></Route>
 
         <Route path="/dashboard/add-exam" element={<AddExam />}></Route>
         <Route path="/chooseExam" element={<MyExams />}></Route>
@@ -102,6 +110,7 @@ function App() {
 
         <Route path="/dashboard/all-data" element={<ShowAllData />}></Route>
       </Routes>
+      <ScrollToTop />
     </BrowserRouter>
   );
 }

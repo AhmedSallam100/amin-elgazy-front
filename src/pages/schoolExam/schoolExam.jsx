@@ -1,11 +1,19 @@
 import { useEffect, useState } from "react";
 import MaterialPhoto from "../Blackboards/MaterialPhoto";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { formatDistanceToNowStrict } from "date-fns";
 import { ar } from "date-fns/locale";
 
 function SchoolExams() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("userInfo")) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   const [examInfo, setExamInfo] = useState(null);
   const { id } = useParams();
 

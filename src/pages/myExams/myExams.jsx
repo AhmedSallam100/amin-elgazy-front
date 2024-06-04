@@ -2,8 +2,17 @@ import { StudentLibrary } from "../showExams/showExam";
 import { Button } from "../home/home";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Exams() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("userInfo")) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   const [exams, setExams] = useState([]);
   useEffect(() => {
     const fetchExams = async () => {
